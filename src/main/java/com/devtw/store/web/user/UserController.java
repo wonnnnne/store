@@ -1,9 +1,9 @@
 package com.devtw.store.web.user;
 
-import com.devtw.store.domain.user.User;
-import com.devtw.store.domain.user.UserRepository;
-import com.devtw.store.domain.user.UserService;
+import com.devtw.store.domain.user.model.User;
+import com.devtw.store.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 public class UserController {
     private final UserService userService;
+//    private final PasswordEncoder passwordEncoder;
 
     @GetMapping("/add")
     public String addForm(@ModelAttribute("user") User user) {
@@ -25,6 +26,8 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             return "user/addUserForm";
         }
+//        String encodedPassword = passwordEncoder.encode(user.getPassword());
+//        user.setPassword(encodedPassword);
         userService.join(user);
         return "redirect:/";
     }

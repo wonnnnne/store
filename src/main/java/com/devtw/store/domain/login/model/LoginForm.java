@@ -1,4 +1,4 @@
-package com.devtw.store.web.login;
+package com.devtw.store.domain.login.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

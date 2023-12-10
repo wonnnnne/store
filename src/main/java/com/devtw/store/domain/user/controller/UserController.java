@@ -1,4 +1,4 @@
-package com.devtw.store.web.user;
+package com.devtw.store.domain.user.controller;
 
 import com.devtw.store.domain.user.model.User;
 import com.devtw.store.domain.user.service.UserService;

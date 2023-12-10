@@ -1,4 +1,4 @@
-package com.devtw.store.web;
+package com.devtw.store;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

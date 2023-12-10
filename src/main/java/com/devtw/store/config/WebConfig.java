@@ -1,7 +1,7 @@
-package com.devtw.store;
+package com.devtw.store.config;
 
-import com.devtw.store.web.interceptor.LogInterceptor;
-import com.devtw.store.web.interceptor.LoginCheckInterceptor;
+import com.devtw.store.domain.interceptor.LogInterceptor;
+import com.devtw.store.domain.interceptor.LoginCheckInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

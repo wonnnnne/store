@@ -1,7 +1,8 @@
-package com.devtw.store.web.login;
+package com.devtw.store.domain.login.controller;
 
 import com.devtw.store.domain.login.service.LoginService;
 import com.devtw.store.domain.user.model.User;
+import com.devtw.store.domain.login.model.LoginForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 //import org.springframework.security.crypto.password.PasswordEncoder;

@@ -1,6 +1,6 @@
-package com.devtw.store.web.interceptor;
+package com.devtw.store.domain.interceptor;
 
-import com.devtw.store.web.SessionConst;
+import com.devtw.store.SessionConst;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 

@@ -1,4 +1,4 @@
-package com.devtw.store;
+package com.devtw.store.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

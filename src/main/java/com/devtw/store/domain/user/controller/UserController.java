@@ -1,35 +1,30 @@
 package com.devtw.store.domain.user.controller;
 
+import com.devtw.store.common.ApiResponse;
 import com.devtw.store.domain.user.model.User;
 import com.devtw.store.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 //import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
-@RequestMapping("/user")
 public class UserController {
+
     private final UserService userService;
-//    private final PasswordEncoder passwordEncoder;
 
-    @GetMapping("/add")
-    public String addForm(@ModelAttribute("user") User user) {
-        return "user/addUserForm";
-    }
+    @PostMapping("/join")
+    public ApiResponse<User> registerUser(@RequestBody User user) {
 
-    @PostMapping("/add")
-    public String save(@Validated @ModelAttribute User user, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "user/addUserForm";
+        User searchUser = userService.getUserByEmail(user.getEmail());
+
+        if (searchUser == null) {
+            User joinedUser = userService.saveUser(user);
+            return ApiResponse.success(joinedUser);
+        } else {
+            return ApiResponse.fail("이미 가입된 정보입니다.");
         }
-//        String encodedPassword = passwordEncoder.encode(user.getPassword());
-//        user.setPassword(encodedPassword);
-        userService.join(user);
-        return "redirect:/";
     }
-
 }

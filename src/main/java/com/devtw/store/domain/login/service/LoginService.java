@@ -12,12 +12,17 @@ public class LoginService {
     private final UserRepository userRepository;
 
     public User login(String email, String password) {
+
         User user = userRepository.findByEmail(email);
-        if (user != null && user.getPassword().equals(password)) {
+        if (user.getPassword().equals(password)) {
             return user;
         } else {
             return null;
         }
+    }
 
+    public Boolean isJoinedUser(String email) {
+        User user = userRepository.findByEmail(email);
+        return user != null;
     }
 }

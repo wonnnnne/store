@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Service            // 내가 서비스다
+@Service
 @RequiredArgsConstructor
 public class UserService {
 

@@ -2,7 +2,6 @@ package com.devtw.store.domain.item.service;
 
 import com.devtw.store.domain.item.model.Item;
 import com.devtw.store.domain.item.repository.ItemRepository;
-import com.devtw.store.domain.user.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

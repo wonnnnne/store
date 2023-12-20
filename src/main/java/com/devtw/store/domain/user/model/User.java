@@ -2,13 +2,13 @@ package com.devtw.store.domain.user.model;
 
 import lombok.*;
 
-import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @ToString
 @Getter
-@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

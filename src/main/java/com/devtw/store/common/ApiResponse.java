@@ -3,8 +3,6 @@ package com.devtw.store.common;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.util.List;
-
 @Getter
 @AllArgsConstructor
 public class ApiResponse<T> {

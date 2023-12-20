@@ -6,8 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +22,7 @@ public class JwtInterceptor implements HandlerInterceptor {
         try {
             String token = request.getHeader(HttpHeaders.AUTHORIZATION).split(" ")[1].trim();
             // 토큰이 없거나 유효하지 않으면 401 Unauthorized 응답 전송
-            if (token == null || !jwtProvider.validateToken(token)) {
+            if (!jwtProvider.validateToken(token)) {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 return false;
             }
